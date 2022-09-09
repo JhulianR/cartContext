@@ -1,18 +1,19 @@
 
 import { useEffect, useState } from "react";
-import productos from "../utils/item";
+import { useParams } from "react-router-dom";
 import desafio from "../utils/promesa";
 import ItemDetail from "./ItemDetail";
-
+const {item} = require('../utils/item');
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
+    const {id} = useParams();
     
     useEffect(() => {
-        desafio(productos)
+        desafio(2000, item.find(productos =>productos.id == id))
         .then(resultado => setProduct(resultado)) 
         .catch(err => console.log(err))
-    }, []);
+    }, [id]);
 
     return (
         

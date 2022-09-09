@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 import productos from "../utils/item";
 import desafio from "../utils/promesa";
 
@@ -20,6 +21,9 @@ export const ItemListContainer = () => {
         <p>{productos.precio}</p>
         <p>{productos.descripcion}</p>
         <img src={productos.pictureUrl} alt=""/>
+        <p>{productos.id}</p>
+        <Link to={'/productos/${id}'}><p>detalles</p></Link>
+        
         </div>
         ))
     }
