@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
-import item from "../utils/item";
+import productos from "../utils/item";
 import desafio from "../utils/promesa";
 
 export const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     
     useEffect(() => {
-        desafio(item)
+        desafio(productos)
         .then(resultado => setProducts(resultado)) 
         .catch(err => console.log(err))
     }, [])
@@ -14,12 +14,12 @@ export const ItemListContainer = () => {
     return (
     <>
     {
-        products.map(item => (
+        products.map(productos => (
         <div className="Productos">
-        <h4>{item.nombre}</h4>
-        <p>{item.precio}</p>
-        <p>{item.descripcion}</p>
-        <img src={item.pictureUrl} alt=""/>
+        <h4>{productos.nombre}</h4>
+        <p>{productos.precio}</p>
+        <p>{productos.descripcion}</p>
+        <img src={productos.pictureUrl} alt=""/>
         </div>
         ))
     }

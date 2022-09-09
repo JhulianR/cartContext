@@ -1,22 +1,18 @@
+import productos from "../utils/item";
 
 
 const ItemDetail = ({item}) => {
     
 
     return (
-        <>
-         
-    {
-        item.map(() => (
-        <div className="Productos">
-        <h4>{item.nombre}</h4>
-        <p>{item.precio}</p>
-        <p>{item.descripcion}</p>
-        <img src={item.pictureUrl} alt=""/>
+        
+        <div className="detalleProducto">
+            <h4>{productos[0].nombre}</h4>
+            <p>{productos[0].precio}</p>
+            <p>{productos[0].descripcion}</p>
+            <img src={productos[0].pictureUrl} alt=""/>
         </div>
-        ))
-    }
-        </>
+       
     );
 }
 
